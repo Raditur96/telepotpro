@@ -902,7 +902,7 @@ ResponseParameters = _create_class('ResponseParameters', [
                      ])
 
 ReactionTypeEmoji = _create_class('ReactionTypeEmoji', [
-                        'type',
+                        _Field('type', default='emoji'),
                         'emoji'
                     ])
 
