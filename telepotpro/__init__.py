@@ -757,7 +757,7 @@ class Bot(_BotBase):
                             is_big=None):
         """ See: https://core.telegram.org/bots/api#setmessagereaction """
         p = _strip(locals())
-        return self._api_request('getUserProfilePhotos', _rectify(p))
+        return self._api_request('setMessageReaction', _rectify(p))
 
     def getUserProfilePhotos(self, user_id,
                              offset=None,
