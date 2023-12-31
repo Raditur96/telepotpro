@@ -900,3 +900,9 @@ ResponseParameters = _create_class('ResponseParameters', [
                          'migrate_to_chat_id',
                          'retry_after',
                      ])
+
+ReactionTypeEmoji = _create_class('ReactionTypeEmoji', [
+                        'type',
+                        'emoji'
+                    ])
+
