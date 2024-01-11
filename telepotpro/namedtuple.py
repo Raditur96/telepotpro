@@ -283,6 +283,11 @@ ChatMember = _create_class('ChatMember', [
 def ChatMemberArray(data):
     return [ChatMember(**p) for p in data]
 
+
+WebAppInfo = _create_class('WebAppInfo', [
+                        'url',
+                    ])
+
 # outgoing
 ReplyKeyboardMarkup = _create_class('ReplyKeyboardMarkup', [
                           'keyboard',
@@ -319,6 +324,7 @@ InlineKeyboardButton = _create_class('InlineKeyboardButton', [
                            'switch_inline_query_current_chat',
                            'callback_game',
                            'pay',
+                           'web_app',
                        ])
 
 # outgoing
@@ -905,4 +911,5 @@ ReactionTypeEmoji = _create_class('ReactionTypeEmoji', [
                         _Field('type', default='emoji'),
                         'emoji'
                     ])
+
 
