@@ -98,7 +98,8 @@ class Bot(_BotBase):
                           disable_web_page_preview=None,
                           disable_notification=None,
                           reply_to_message_id=None,
-                          reply_markup=None):
+                          reply_markup=None,
+                          protect_content=None):
         """ See: https://core.telegram.org/bots/api#sendmessage """
         p = _strip(locals())
         return await self._api_request('sendMessage', _rectify(p))
@@ -114,7 +115,8 @@ class Bot(_BotBase):
                         parse_mode=None,
                         disable_notification=None,
                         reply_to_message_id=None,
-                        reply_markup=None):
+                        reply_markup=None,
+                        protect_content=None):
         """
         See: https://core.telegram.org/bots/api#sendphoto
 
@@ -137,7 +139,8 @@ class Bot(_BotBase):
                         title=None,
                         disable_notification=None,
                         reply_to_message_id=None,
-                        reply_markup=None):
+                        reply_markup=None,
+                        protect_content=None):
         """
         See: https://core.telegram.org/bots/api#sendaudio
 
@@ -151,7 +154,8 @@ class Bot(_BotBase):
                            parse_mode=None,
                            disable_notification=None,
                            reply_to_message_id=None,
-                           reply_markup=None):
+                           reply_markup=None,
+                           protect_content=None):
         """
         See: https://core.telegram.org/bots/api#senddocument
 
@@ -169,7 +173,8 @@ class Bot(_BotBase):
                         supports_streaming=None,
                         disable_notification=None,
                         reply_to_message_id=None,
-                        reply_markup=None):
+                        reply_markup=None,
+                        protect_content=None):
         """
         See: https://core.telegram.org/bots/api#sendvideo
 
@@ -178,13 +183,32 @@ class Bot(_BotBase):
         p = _strip(locals(), more=['video'])
         return await self._api_request_with_file('sendVideo', _rectify(p), 'video', video)
 
+     async def sendAnimation(self, chat_id, animation,
+                        duration=None,
+                        width=None,
+                        height=None,
+                        caption=None,
+                        parse_mode=None,
+                        caption_entities=None,
+                        has_spoiler=None,
+                        disable_notification=None,
+                        reply_to_message_id=None,
+                        reply_markup=None,
+                        protect_content=None):
+        """
+        See: https://core.telegram.org/bots/api#sendanimation
+        """
+        p = _strip(locals(), more=['animation'])
+        return await self._api_request_with_file('sendAnimation', _rectify(p), 'animation', animation)
+    
     async def sendVoice(self, chat_id, voice,
                         caption=None,
                         parse_mode=None,
                         duration=None,
                         disable_notification=None,
                         reply_to_message_id=None,
-                        reply_markup=None):
+                        reply_markup=None,
+                        protect_content=None):
         """
         See: https://core.telegram.org/bots/api#sendvoice
 
@@ -198,7 +222,8 @@ class Bot(_BotBase):
                             length=None,
                             disable_notification=None,
                             reply_to_message_id=None,
-                            reply_markup=None):
+                            reply_markup=None,
+                            protect_content=None):
         """
         See: https://core.telegram.org/bots/api#sendvideonote
 
@@ -214,7 +239,8 @@ class Bot(_BotBase):
 
     async def sendMediaGroup(self, chat_id, media,
                              disable_notification=None,
-                             reply_to_message_id=None):
+                             reply_to_message_id=None,
+                             protect_content=None):
         """
         See: https://core.telegram.org/bots/api#sendmediagroup
 
@@ -244,7 +270,8 @@ class Bot(_BotBase):
                            live_period=None,
                            disable_notification=None,
                            reply_to_message_id=None,
-                           reply_markup=None):
+                           reply_markup=None,
+                           protect_content=None):
         """ See: https://core.telegram.org/bots/api#sendlocation """
         p = _strip(locals())
         return await self._api_request('sendLocation', _rectify(p))
@@ -275,7 +302,8 @@ class Bot(_BotBase):
                         foursquare_id=None,
                         disable_notification=None,
                         reply_to_message_id=None,
-                        reply_markup=None):
+                        reply_markup=None,
+                        protect_content=None):
         """ See: https://core.telegram.org/bots/api#sendvenue """
         p = _strip(locals())
         return await self._api_request('sendVenue', _rectify(p))
@@ -284,7 +312,8 @@ class Bot(_BotBase):
                           last_name=None,
                           disable_notification=None,
                           reply_to_message_id=None,
-                          reply_markup=None):
+                          reply_markup=None,
+                          protect_content=None):
         """ See: https://core.telegram.org/bots/api#sendcontact """
         p = _strip(locals())
         return await self._api_request('sendContact', _rectify(p))
@@ -292,7 +321,8 @@ class Bot(_BotBase):
     async def sendGame(self, chat_id, game_short_name,
                        disable_notification=None,
                        reply_to_message_id=None,
-                       reply_markup=None):
+                       reply_markup=None,
+                       protect_content=None):
         """ See: https://core.telegram.org/bots/api#sendgame """
         p = _strip(locals())
         return await self._api_request('sendGame', _rectify(p))
@@ -311,7 +341,8 @@ class Bot(_BotBase):
                           is_flexible=None,
                           disable_notification=None,
                           reply_to_message_id=None,
-                          reply_markup=None):
+                          reply_markup=None,
+                          protect_content=None):
         """ See: https://core.telegram.org/bots/api#sendinvoice """
         p = _strip(locals())
         return await self._api_request('sendInvoice', _rectify(p))
