@@ -616,18 +616,18 @@ class Bot(_BotBase):
         return self._api_request_with_file('sendVideo', _rectify(p), 'video', video)
                       
 
-      def sendAnimation(self, chat_id, animation,
-                        duration=None,
-                        width=None,
-                        height=None,
-                        caption=None,
-                        parse_mode=None,
-                        caption_entities=None,
-                        has_spoiler=None,
-                        disable_notification=None,
-                        reply_to_message_id=None,
-                        reply_markup=None,
-                        protect_content=None):
+    def sendAnimation(self, chat_id, animation,
+                      duration=None,
+                      width=None,
+                      height=None,
+                      caption=None,
+                      parse_mode=None,
+                      caption_entities=None,
+                      has_spoiler=None,
+                      disable_notification=None,
+                      reply_to_message_id=None,
+                      reply_markup=None,
+                      protect_content=None):
         """
         See: https://core.telegram.org/bots/api#sendanimation
         """
