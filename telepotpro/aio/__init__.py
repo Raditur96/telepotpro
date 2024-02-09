@@ -185,16 +185,16 @@ class Bot(_BotBase):
 
      async def sendAnimation(self, chat_id, animation,
                              duration=None,
-                              width=None,
-                              height=None,
-                              caption=None,
-                              parse_mode=None,
-                              caption_entities=None,
-                              has_spoiler=None,
-                              disable_notification=None,
-                              reply_to_message_id=None,
-                              reply_markup=None,
-                              protect_content=None):
+                             width=None,
+                             height=None,
+                             caption=None,
+                             parse_mode=None,
+                             caption_entities=None,
+                             has_spoiler=None,
+                             disable_notification=None,
+                             reply_to_message_id=None,
+                             reply_markup=None,
+                             protect_content=None):
         """
         See: https://core.telegram.org/bots/api#sendanimation
         """
